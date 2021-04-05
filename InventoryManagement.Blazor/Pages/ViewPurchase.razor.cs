@@ -51,14 +51,12 @@ namespace InventoryManagement.Blazor.Pages
             var parameters = new ModalParameters();
             parameters.Add(nameof(EditPurchaseItem.PurchaseId), id);
             parameters.Add(nameof(EditPurchaseItem.PurchaseItem), PurchaseItem);
-            parameters.Add(nameof(EditPurchaseItem.IsEdit), true);
 
             var formModal = Modal.Show<EditPurchaseItem>("Edit Item", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled)
             {
-                await Refresh();
             }
             else
             {
@@ -69,14 +67,12 @@ namespace InventoryManagement.Blazor.Pages
         {
             var parameters = new ModalParameters();
             parameters.Add(nameof(EditPurchaseItem.PurchaseId), id);
-            parameters.Add(nameof(EditPurchaseItem.IsEdit), false);
 
             var formModal = Modal.Show<EditPurchaseItem>("Add New Item", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled)
             {
-                await Refresh();
             }
             else
             {
