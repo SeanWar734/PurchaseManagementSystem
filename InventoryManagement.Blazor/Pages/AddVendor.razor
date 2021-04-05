@@ -7,11 +7,11 @@
         <EditForm Model="Vendor" OnValidSubmit="(() => AddVendor(Vendor))">
             <div>Vendor Name:</div>
             <div>
-                <InputText @bind-Value="Vendor.Name" />
+                <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="Vendor.Name" />
             </div>
             <div class="py-2">
                 <button class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" type="submit">Add</button>
-            </div>        
+            </div>
         </EditForm>
     </div>
     <br />

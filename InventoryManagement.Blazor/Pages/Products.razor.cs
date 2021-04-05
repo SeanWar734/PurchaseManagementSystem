@@ -41,5 +41,18 @@ namespace InventoryManagement.Blazor.Pages
                 await Refresh();
             }
         }
+
+        public async Task ShowDeleteVendorModal(Guid Id)
+        {
+            var formModal = Modal.Show<Confirmation>("Are you sure you want to Delete?");
+            var result = await formModal.Result;
+
+            if (result.Cancelled) { }
+            else
+            {
+                await ProductService.DeleteProductAsync(Id);
+                await Refresh();
+            }
+        }
     }
 }
