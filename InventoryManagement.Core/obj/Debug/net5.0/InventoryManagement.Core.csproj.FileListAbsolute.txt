@@ -1,0 +1,14 @@
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\InventoryManagement.Core.deps.json
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\InventoryManagement.Core.runtimeconfig.json
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\InventoryManagement.Core.runtimeconfig.dev.json
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\InventoryManagement.Core.dll
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\ref\InventoryManagement.Core.dll
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\bin\Debug\net5.0\InventoryManagement.Core.pdb
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.AssemblyInfoInputs.cache
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.AssemblyInfo.cs
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.csproj.CoreCompileInputs.cache
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.dll
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\ref\InventoryManagement.Core.dll
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.pdb
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Core\obj\Debug\net5.0\InventoryManagement.Core.genruntimeconfig.cache

@@ -1,0 +1,58 @@
+﻿@inherits EditPurchaseBase
+
+@if (CreatePurchase != null)
+{
+<EditForm Model="CreatePurchase" OnValidSubmit="@(() => AddPurchaseAsync(CreatePurchase))">
+    <table>
+        <tbody>
+            <tr>
+                <td class="w-40">
+                    Date
+                </td>
+                <td>
+                    <InputDate class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchase.Date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Reference Number
+                </td>
+                <td>
+                    <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchase.ReferenceNumber" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vendor
+                </td>
+                <td>
+                    <InputSelect class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchase.VendorId">
+                        @if (Vendors != null)
+                            {
+                            @foreach (var Vendor in Vendors)
+                                {
+                                <option value="@Vendor.Id">@Vendor.Name</option>
+                                }
+                            }
+                    </InputSelect>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="inline-flex float-right px-2 space-x-2">
+        @if (IsEdit)
+        {
+            <button class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" @onclick="@(() => UpdatePurchaseAsync(CreatePurchase))">Update</button>
+        }
+        @if (!IsEdit)
+        {
+            <button class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" type="submit">Save</button>
+        }
+        <button class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-red-300 focus:outline-none my-1" @onclick="Close">Cancel</button>
+        </div>
+</EditForm>
+}
+else
+{
+    <span>Creating Purchase Please Wait...</span>
+}

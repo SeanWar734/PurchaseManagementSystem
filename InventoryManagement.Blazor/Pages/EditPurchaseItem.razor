@@ -1,0 +1,83 @@
+﻿@inherits EditPurchaseItemBase
+@using InventoryManagement.Blazor.Data
+
+@if (CreatePurchaseItem != null)
+{
+    <EditForm Model="CreatePurchaseItem" OnInvalidSubmit="Cancel" OnValidSubmit="@(() => AddPurchaseItemAsync(CreatePurchaseItem))">
+        <table class="table-auto">
+            <tbody>
+                <tr>
+                    <td class="w-64">Product</td>
+                    <td>
+                        <InputSelect class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchaseItem.ProductId">
+                            @foreach (var product in Products)
+                                {
+                                <option value="@product.Id">@product.Name</option>
+                                }
+                        </InputSelect>
+                    </td>
+                </tr>
+                <tr>
+                    <td>UOM</td>
+                    <td>
+                        <InputSelect class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchaseItem.UOM">
+                            @foreach (var UOM in Enum.GetValues(typeof(UnitOfMeasure)))
+                                {
+                                <option value="@UOM">@UOM</option>
+                                }
+                        </InputSelect>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>
+                        <InputNumber class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchaseItem.Quantity" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>
+                        <InputNumber class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchaseItem.Price" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Notes</td>
+                    <td>
+                        <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="CreatePurchaseItem.Notes" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>
+                        <div class="block border border-grey-light w-full p-3 rounded mb-4">@CreatePurchaseItem.GetTotal().ToString("C")</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @if (IsEdit == true)
+                        {
+                            <button class="w-24 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-red-300 focus:outline-none my-1" @onclick="@(() => DeletePurchaseItemAsync(CreatePurchaseItem.Id))">Delete</button>
+                        }
+                    </td>
+                    <td>
+                        <div class="inline-flex space-x-2">
+                            <button class="border-2 w-24 border-black text-center py-3 rounded bg-gray-300 hover:bg-gray-500 focus:outline-none my-1" @onclick="Cancel">Cancel</button>
+                            @if (!IsEdit)
+                            {
+                                <button class="border-2 w-24 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" type="submit">Save</button>
+                            }
+                            @if (IsEdit)
+                            {
+                                <button class="border-2 w-24 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" @onclick="@(() => UpdatePurchaseItemAsync(CreatePurchaseItem))">Update</button>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </EditForm>
+}
+else
+{
+    <span>Loading Still...</span>
+}
