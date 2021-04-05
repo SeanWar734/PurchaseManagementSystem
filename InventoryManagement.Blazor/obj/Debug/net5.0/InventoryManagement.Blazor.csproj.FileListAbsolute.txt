@@ -102,3 +102,7 @@ C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\o
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\AddEditPurchaseItem.razor.g.cs
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\Razor\Pages\AddEditPurchase.razor.g.cs
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\Razor\Pages\AddEditPurchaseItem.razor.g.cs
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\AddVendor.razor.g.cs
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\AddProduct.razor.g.cs
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\Razor\Pages\AddProduct.razor.g.cs
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\obj\Debug\net5.0\Razor\Pages\AddVendor.razor.g.cs

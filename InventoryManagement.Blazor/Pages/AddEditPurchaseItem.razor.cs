@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.Blazor.Pages
 {
-    public class EditPurchaseItemBase : ComponentBase
+    public class AddEditPurchaseItemBase : ComponentBase
     {
         [Inject] IPurchaseItemService PurchaseItemService { get; set; }
         [Inject] IProductService ProductService { get; set; }

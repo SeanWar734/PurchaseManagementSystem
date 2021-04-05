@@ -1,0 +1,32 @@
+﻿@page "/addproduct"
+@inherits AddProductBase
+
+@if (Product != null)
+{
+    <EditForm Model="Product" OnValidSubmit="(() => AddProduct(Product))">
+        <div>
+            <div>Name</div>
+            <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="Product.Name" />
+        </div>        
+        <div>
+            <div>Brand</div>
+            <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="Product.Brand" />
+        </div>   
+        <div>
+            <div>Description</div>
+            <InputText class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="Product.Description"/>
+        </div>
+        <div>
+            <div>Category</div>
+            <InputSelect class="block border border-grey-light w-full p-3 rounded mb-4" @bind-Value="Product.ProductCategoryId">
+                <option value="01204849-CBF2-4406-361C-08D8F2B4C685">Nuts</option>
+                <option value="BA24F865-0AF3-4CE1-B123-0F1DCD1E3020">Vegetables</option>
+                <option value="7E42A3B7-F02F-442D-97EF-2B13BB423414">Dairy</option>
+                <option value="52411182-FF92-46EC-9233-A76FFB190339">Dry Goods</option>
+                <option value="5A077AA8-C217-4209-A70C-DD92C2D10B09">Meat</option>
+                <option value="209BC539-DE7D-4A75-9590-EABB17E2CF8D">Fruit</option>
+            </InputSelect>
+        </div>
+        <button type="submit" class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1">Add</button>
+    </EditForm>
+}

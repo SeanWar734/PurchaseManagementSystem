@@ -55,9 +55,7 @@ namespace InventoryManagement.Blazor.Pages
             var formModal = Modal.Show<AddEditPurchaseItem>("Edit Item", parameters);
             var result = await formModal.Result;
 
-            if (result.Cancelled)
-            {
-            }
+            if (result.Cancelled){}
             else
             {
                 await Refresh();
@@ -71,9 +69,7 @@ namespace InventoryManagement.Blazor.Pages
             var formModal = Modal.Show<AddEditPurchaseItem>("Add New Item", parameters);
             var result = await formModal.Result;
 
-            if (result.Cancelled)
-            {
-            }
+            if (result.Cancelled){}
             else
             {
                 await Refresh();

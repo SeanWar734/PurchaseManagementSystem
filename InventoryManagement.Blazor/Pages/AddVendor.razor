@@ -1,0 +1,19 @@
+﻿@page "/addvendor"
+@inherits AddVendorBase
+
+@if (Vendor != null)
+{
+    <div class="text-2xl">
+        <EditForm Model="Vendor" OnValidSubmit="(() => AddVendor(Vendor))">
+            <div>Vendor Name:</div>
+            <div>
+                <InputText @bind-Value="Vendor.Name" />
+            </div>
+            <div class="py-2">
+                <button class="w-20 border-2 border-black text-center py-3 rounded bg-gray-300 hover:bg-green-300 focus:outline-none my-1" type="submit">Add</button>
+            </div>        
+        </EditForm>
+    </div>
+    <br />
+    <br />
+}

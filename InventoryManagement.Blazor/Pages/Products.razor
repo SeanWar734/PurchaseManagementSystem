@@ -3,19 +3,24 @@
 
 @if (Products != null)
 {
-    <table class="table-auto border-2">
-        <tablebody>
-
-            @foreach (var product in Products)
-            {
-                <tr>
-                    <td class="border-2">@product.Name </td>
-                    <td class="border-2">@product.Brand </td>
-                    <td class="border-2">@product.ProductCategory</td>
-                    <td class="border-2">@product.Description</td>
-                </tr>
-            }
-
-        </tablebody>
+    <div class="py-2 text-right">
+        <button class="border-2 border-black w-40" @onclick="@(() => ShowAddProductModal())">Add</button>
+    </div>
+    <table class="table-auto border-t-2 border-b-2 border-black table table-striped">
+        <tr>
+            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><div>Product</div></th>
+            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><div>Brand</div></th>
+            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><div>Category</div></th>
+            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><div>Description</div></th>
+        </tr>
+        @foreach (var product in Products)
+        {
+            <tr>
+                <td class="border-l-2 border-r-2 border-black">@product.Name </td>
+                <td class="border-l-2 border-r-2 border-black">@product.Brand </td>
+                <td class="border-l-2 border-r-2 border-black">@product.ProductCategory</td>
+                <td class="border-l-2 border-r-2 border-black">@product.Description</td>
+            </tr>
+        }
     </table>
 }

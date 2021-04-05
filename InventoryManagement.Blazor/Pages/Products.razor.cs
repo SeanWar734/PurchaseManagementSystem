@@ -23,5 +23,23 @@ namespace InventoryManagement.Blazor.Pages
             Products = await ProductService.GetAllProductsAsync();
             Products = Products.OrderBy(p => p.ProductCategory).ThenBy(p => p.Brand).ToList();
         }
+
+        public async Task Refresh()
+        {
+            Products = await ProductService.GetAllProductsAsync();
+            Products = Products.OrderBy(p => p.ProductCategory).ThenBy(p => p.Brand).ToList();
+        }
+
+        public async Task ShowAddProductModal()
+        {
+            var formModal = Modal.Show<AddProduct>();
+            var result = await formModal.Result;
+
+            if (result.Cancelled) { }
+            else
+            {
+                await Refresh();
+            }
+        }
     }
 }

@@ -1,21 +1,27 @@
-﻿@page "/vendors" 
+﻿@page "/vendors"
 @inherits VendorsBase
 
 @if (Vendors != null)
 {
-    <table>
-        <tablebody>
-            @foreach (var item in Vendors)
-            {
-                <tr>
-                    <td>
+    <div class="py-2 text-right">
+        <button class="border-2 border-black w-40" @onclick="@(() => ShowAddVendorModal())">Add</button>
+    </div>
+    <table class="table-auto border-t-2 border-b-2 border-black table table-striped">
+        <tr>
+            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><div>Vendor Name</div></th>
+        </tr>
+        @foreach (var item in Vendors)
+        {
+            <tr>
+                <td class="border-l-2 border-r-2 border-black">
+                    <div class="float-left">
                         @item.Name
-                    </td>
-                    <td>
-                        @item.Id
-                    </td>
-                </tr>
-            }
-        </tablebody>
+                    </div>
+                    <div class="float-right px-2">
+                        <button class="w-4 border-black" @onclick="(() => ShowDeleteVendorModal(item.Id))">x</button>
+                    </div>
+                </td>
+            </tr>
+        }
     </table>
 }
