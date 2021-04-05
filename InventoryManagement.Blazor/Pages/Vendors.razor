@@ -1,0 +1,21 @@
+﻿@page "/vendors" 
+@inherits VendorsBase
+
+@if (Vendors != null)
+{
+    <table>
+        <tablebody>
+            @foreach (var item in Vendors)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Id
+                    </td>
+                </tr>
+            }
+        </tablebody>
+    </table>
+}

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.Blazor.Pages
 {
-    public class EditPurchaseBase : ComponentBase
+    public class AddEditPurchaseBase : ComponentBase
     {
         [Inject] IPurchaseService PurchaseService { get; set; }
         [Inject] IVendorService VendorService { get; set; }

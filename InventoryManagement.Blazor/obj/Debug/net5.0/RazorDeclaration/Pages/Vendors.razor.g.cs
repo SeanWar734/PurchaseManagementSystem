@@ -89,7 +89,8 @@ using Blazored.Modal.Services;
 #line default
 #line hidden
 #nullable disable
-    public partial class EditPurchase : EditPurchaseBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/vendors")]
+    public partial class Vendors : VendorsBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

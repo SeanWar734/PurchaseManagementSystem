@@ -49,10 +49,10 @@ namespace InventoryManagement.Blazor.Pages
         public async Task ShowEditPurchaseItemModal(Guid id, PurchaseItemListResponse PurchaseItem)
         {
             var parameters = new ModalParameters();
-            parameters.Add(nameof(EditPurchaseItem.PurchaseId), id);
-            parameters.Add(nameof(EditPurchaseItem.PurchaseItem), PurchaseItem);
+            parameters.Add(nameof(AddEditPurchaseItem.PurchaseId), id);
+            parameters.Add(nameof(AddEditPurchaseItem.PurchaseItem), PurchaseItem);
 
-            var formModal = Modal.Show<EditPurchaseItem>("Edit Item", parameters);
+            var formModal = Modal.Show<AddEditPurchaseItem>("Edit Item", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled)
@@ -66,9 +66,9 @@ namespace InventoryManagement.Blazor.Pages
         public async Task ShowAddPurchaseItemModal(Guid id)
         {
             var parameters = new ModalParameters();
-            parameters.Add(nameof(EditPurchaseItem.PurchaseId), id);
+            parameters.Add(nameof(AddEditPurchaseItem.PurchaseId), id);
 
-            var formModal = Modal.Show<EditPurchaseItem>("Add New Item", parameters);
+            var formModal = Modal.Show<AddEditPurchaseItem>("Add New Item", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled)

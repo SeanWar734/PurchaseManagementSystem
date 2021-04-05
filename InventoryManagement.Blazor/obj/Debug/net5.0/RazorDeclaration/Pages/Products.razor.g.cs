@@ -89,14 +89,8 @@ using Blazored.Modal.Services;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\Pages\EditPurchaseItem.razor"
-using InventoryManagement.Blazor.Data;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class EditPurchaseItem : EditPurchaseItemBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
+    public partial class Products : ProductsBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

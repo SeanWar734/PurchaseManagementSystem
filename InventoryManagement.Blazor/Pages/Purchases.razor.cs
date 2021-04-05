@@ -74,10 +74,10 @@ namespace InventoryManagement.Blazor.Pages
         public async Task ShowEditPurchaseModal(Guid id)
         {
             var parameters = new ModalParameters();
-            parameters.Add(nameof(EditPurchase.Id), id); 
-            parameters.Add(nameof(EditPurchase.IsEdit), true);
+            parameters.Add(nameof(AddEditPurchase.Id), id); 
+            parameters.Add(nameof(AddEditPurchase.IsEdit), true);
 
-            var formModal = Modal.Show<EditPurchase>("Edit Purchase", parameters);
+            var formModal = Modal.Show<AddEditPurchase>("Edit Purchase", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled) { }
@@ -91,9 +91,9 @@ namespace InventoryManagement.Blazor.Pages
         {
             Guid id = Guid.NewGuid();
             var parameters = new ModalParameters();
-            parameters.Add(nameof(EditPurchase.Id), id);
+            parameters.Add(nameof(AddEditPurchase.Id), id);
 
-            var formModal = Modal.Show<EditPurchase>("Add New Purchase", parameters);
+            var formModal = Modal.Show<AddEditPurchase>("Add New Purchase", parameters);
             var result = await formModal.Result;
 
             if (result.Cancelled) { }

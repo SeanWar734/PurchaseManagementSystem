@@ -1,0 +1,21 @@
+﻿@page "/products"
+@inherits ProductsBase
+
+@if (Products != null)
+{
+    <table class="table-auto border-2">
+        <tablebody>
+
+            @foreach (var product in Products)
+            {
+                <tr>
+                    <td class="border-2">@product.Name </td>
+                    <td class="border-2">@product.Brand </td>
+                    <td class="border-2">@product.ProductCategory</td>
+                    <td class="border-2">@product.Description</td>
+                </tr>
+            }
+
+        </tablebody>
+    </table>
+}
