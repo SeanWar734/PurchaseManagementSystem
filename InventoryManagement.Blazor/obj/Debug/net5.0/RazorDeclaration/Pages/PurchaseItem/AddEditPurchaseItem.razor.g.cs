@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace InventoryManagement.Blazor.Pages
+namespace InventoryManagement.Blazor.Pages.PurchaseItem
 {
     #line hidden
     using System;
@@ -89,8 +89,14 @@ using Blazored.Modal.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/addvendor")]
-    public partial class AddVendor : AddVendorBase
+#nullable restore
+#line 2 "C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Blazor\Pages\PurchaseItem\AddEditPurchaseItem.razor"
+using InventoryManagement.Blazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class AddEditPurchaseItem : AddEditPurchaseItemBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

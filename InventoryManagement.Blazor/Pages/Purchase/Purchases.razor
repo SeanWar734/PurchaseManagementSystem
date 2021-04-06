@@ -4,33 +4,46 @@
 
 @if (Purchases != null)
 {
-    <div class="py-2 text-right">
-        <button class="border-2 border-black w-40 hover:bg-gray-300" @onclick="@(() => ShowAddPurchaseModal())">Add</button>
-    </div>
-    <table class="table-auto border-t-2 border-b-2 border-black table table-striped">
-        <tr>
-            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortDate"><div class="text-left font-bold">Date</div></button></th>
-            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortReferenceNumber"><div class="text-left font-bold">Reference Number</div></button></th>
-            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortVendorName"><div class="text-left font-bold">Vendor Name</div></button></th>
-            <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortTotal"><div class="text-left font-bold">Total</div></button></th>
-            <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">Edit</div></th>
-            <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">Delete</div></th>
-            <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">View</div></th>
-        </tr>
-
-        @foreach (var purchase in Purchases)
+    <div class="py-2 pb-2">
+        @if (IsLoading)
         {
-            <tr>
-                <td class="border-l-2 border-r-2 border-black">@purchase.Date.ToString("MM/dd/yyyy")</td>
-                <td class="border-l-2 border-r-2 border-black">@purchase.ReferenceNumber</td>
-                <td class="border-l-2 border-r-2 border-black">@purchase.VendorName</td>
-                <td class="border-l-2 border-r-2 border-black">@purchase.Total.ToString("C")</td>
-                <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => ShowEditPurchaseModal(purchase.Id))">Edit</button></td>
-                <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => ShowDeletePurchaseModal(purchase.Id))">Delete</button></td>
-                <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => RedirectViewPurchase(purchase.Id))">View</button></td>
-            </tr>
+            <div class="flex float-left">
+                <span class="px-4">Loading...</span>
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
         }
-    </table>
+        <button class="border-2 float-right border-black w-40 hover:bg-gray-300" @onclick="@(() => ShowAddPurchaseModal())">Add</button>
+    </div>
+    <div class="pt-7">
+        <table class="table-auto border-t-2 border-b-2 border-black table table-striped">
+            <tr>
+                <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortDate"><div class="text-left font-bold">Date</div></button></th>
+                <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortReferenceNumber"><div class="text-left font-bold">Reference Number</div></button></th>
+                <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortVendorName"><div class="text-left font-bold">Vendor Name</div></button></th>
+                <th class="w-40 bg-gray-300 border-l-2 border-r-2 border-black"><button @onclick="SwitchSortTotal"><div class="text-left font-bold">Total</div></button></th>
+                <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">Edit</div></th>
+                <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">Delete</div></th>
+                <th class="w-20 bg-gray-300 border-l-2 border-r-2 border-black"><div class="text-left">View</div></th>
+            </tr>
+
+            @foreach (var purchase in Purchases)
+            {
+                <tr>
+                    <td class="border-l-2 border-r-2 border-black">@purchase.Date.ToString("MM/dd/yyyy")</td>
+                    <td class="border-l-2 border-r-2 border-black">@purchase.ReferenceNumber</td>
+                    <td class="border-l-2 border-r-2 border-black">@purchase.VendorName</td>
+                    <td class="border-l-2 border-r-2 border-black">@purchase.Total.ToString("C")</td>
+                    <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => ShowEditPurchaseModal(purchase.Id))">Edit</button></td>
+                    <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => ShowDeletePurchaseModal(purchase.Id))">Delete</button></td>
+                    <td class="border-l-2 border-r-2 border-black"><button @onclick="@(() => RedirectViewPurchase(purchase.Id))">View</button></td>
+                </tr>
+            }
+        </table>
+    </div>
 }
 else
 {

@@ -4,6 +4,7 @@ using InventoryManagement.Blazor.Data.PurchaseItems;
 using InventoryManagement.Blazor.Data.Purchases;
 using InventoryManagement.Blazor.Data.Vendors;
 using InventoryManagement.Blazor.Pages.Purchase;
+using InventoryManagement.Blazor.Shared;
 using InventoryManagement.Shared.PurchaseItems;
 using InventoryManagement.Shared.Purchases;
 using Microsoft.AspNetCore.Components;
@@ -25,6 +26,7 @@ namespace InventoryManagement.Blazor.Pages
 
         public List<PurchaseListResponse> Purchases;
         public List<PurchaseItemListResponse> PurchaseItems;
+        public bool IsLoading { get; set; } = false;
 
         public bool DateToggled = true;
         public bool ReferenceNumberToggled = false;
@@ -33,25 +35,15 @@ namespace InventoryManagement.Blazor.Pages
 
         protected async override Task OnInitializedAsync()
         {
-            Purchases = await PurchaseService.GetAllPurchasesAsync();
-            PurchaseItems = await PurchaseItemService.GetAllPurchaseItemsAsync();
-
-            foreach (var purchase in Purchases)
-            {
-                foreach (var purchaseItem in PurchaseItems)
-                {
-                    if (purchaseItem.PurchaseId == purchase.Id)
-                    {
-                        purchase.Total += purchaseItem.GetTotal();
-                    }
-                }
-            }
-
+            await Refresh();
             SortByDateDescending();
         }
 
         public async Task Refresh()
         {
+            IsLoading = true;
+            StateHasChanged();
+
             Purchases = await PurchaseService.GetAllPurchasesAsync();
             PurchaseItems = await PurchaseItemService.GetAllPurchaseItemsAsync();
 
@@ -65,6 +57,9 @@ namespace InventoryManagement.Blazor.Pages
                     }
                 }
             }
+
+            IsLoading = false;
+            StateHasChanged();
         }
 
         public void RedirectViewPurchase(Guid id)

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace InventoryManagement.Blazor.Pages
+namespace InventoryManagement.Blazor.Pages.Vendor
 {
     #line hidden
     using System;

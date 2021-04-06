@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace InventoryManagement.Blazor.Pages
+namespace InventoryManagement.Blazor.Pages.Vendor
 {
     #line hidden
     using System;
@@ -89,8 +89,8 @@ using Blazored.Modal.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
-    public partial class Products : ProductsBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addvendor")]
+    public partial class AddVendor : AddVendorBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

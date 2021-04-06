@@ -1,5 +1,7 @@
 ﻿using Blazored.Modal.Services;
 using InventoryManagement.Blazor.Data.Products;
+using InventoryManagement.Blazor.Pages.Product;
+using InventoryManagement.Blazor.Shared;
 using InventoryManagement.Shared.Products;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -12,7 +14,6 @@ namespace InventoryManagement.Blazor.Pages
     public class ProductsBase : ComponentBase
     {
         [Inject] IProductService ProductService { get; set; }
-        [Inject] NavigationManager NavManager { get; set; }
 
         [CascadingParameter] public IModalService Modal { get; set; }
 

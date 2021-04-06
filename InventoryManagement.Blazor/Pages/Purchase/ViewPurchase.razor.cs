@@ -2,6 +2,7 @@
 using Blazored.Modal.Services;
 using InventoryManagement.Blazor.Data.PurchaseItems;
 using InventoryManagement.Blazor.Data.Purchases;
+using InventoryManagement.Blazor.Pages.PurchaseItem;
 using InventoryManagement.Shared.PurchaseItems;
 using InventoryManagement.Shared.Purchases;
 using Microsoft.AspNetCore.Components;

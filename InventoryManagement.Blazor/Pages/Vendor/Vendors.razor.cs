@@ -1,6 +1,8 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using InventoryManagement.Blazor.Data.Vendors;
+using InventoryManagement.Blazor.Pages.Vendor;
+using InventoryManagement.Blazor.Shared;
 using InventoryManagement.Shared.Vendors;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -13,7 +15,6 @@ namespace InventoryManagement.Blazor.Pages
     public class VendorsBase : ComponentBase
     {
         [Inject] IVendorService VendorService { get; set; }
-        [Inject] NavigationManager NavManager { get; set; }
 
         [CascadingParameter] public IModalService Modal { get; set; }
 
@@ -21,7 +22,7 @@ namespace InventoryManagement.Blazor.Pages
 
         protected async override Task OnInitializedAsync()
         {
-            Vendors = await VendorService.GetAllVendorsAsync();
+            await Refresh();
         }
 
         public async Task Refresh()
