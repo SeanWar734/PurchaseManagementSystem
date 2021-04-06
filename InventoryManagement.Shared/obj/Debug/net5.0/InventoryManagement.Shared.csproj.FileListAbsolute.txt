@@ -12,3 +12,4 @@ C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Shared\o
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Shared\obj\Debug\net5.0\ref\InventoryManagement.Shared.dll
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Shared\obj\Debug\net5.0\InventoryManagement.Shared.pdb
 C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Shared\obj\Debug\net5.0\InventoryManagement.Shared.genruntimeconfig.cache
+C:\Users\swarchuck\source\repos\InventoryManagement\InventoryManagement.Shared\obj\Debug\net5.0\InventoryManagement.Shared.csprojAssemblyReference.cache

@@ -12,4 +12,9 @@
     <ProjectReference Include="..\InventoryManagement.Shared\InventoryManagement.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

@@ -111,8 +111,8 @@ Relational:TableColumnMappings: System.Collections.Generic.SortedSet`1[Microsoft
 <Link Source = "Purchase" Target="Purchase.LazyLoader" Category="Contains" />
 <Link Source = "IModel" Target="Vendor" Category="Contains" />
 <Link Source = "PurchaseItem" Target="PurchaseItem.Id" Category="Contains" />
-<Link Source="PurchaseItem" Target="Product" From="PurchaseItem.ProductId" To="Product.Id" Name="PurchaseItem -> Product" Annotations="Relational:ForeignKeyMappings: System.Collections.Generic.SortedSet`1[Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKeyConstraint]" IsUnique="True" Label="1:1" Category="Foreign Key" />
-<Link Source="PurchaseItem" Target="Purchase" From="PurchaseItem.PurchaseId" To="Purchase.Id" Name="PurchaseItem -> Purchase" Annotations="Relational:ForeignKeyMappings: System.Collections.Generic.SortedSet`1[Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKeyConstraint]" IsUnique="True" Label="1:1" Category="Foreign Key" />
+<Link Source="PurchaseItem" Target="Product" From="PurchaseItem.ProductId" To="Product.Id" Name="PurchaseItem -> Product" Annotations="Relational:ForeignKeyMappings: System.Collections.Generic.SortedSet`1[Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKeyConstraint]" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="PurchaseItem" Target="Purchase" From="PurchaseItem.PurchaseId" To="Purchase.Id" Name="PurchaseItem -> Purchase" Annotations="Relational:ForeignKeyMappings: System.Collections.Generic.SortedSet`1[Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKeyConstraint]" IsUnique="False" Label="1:*" Category="Foreign Key" />
 <Link Source = "PurchaseItem" Target="PurchaseItem.Notes" Category="Contains" />
 <Link Source = "PurchaseItem" Target="PurchaseItem.Price" Category="Contains" />
 <Link Source = "PurchaseItem" Target="PurchaseItem.ProductId" Category="Contains" />
